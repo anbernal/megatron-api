@@ -1,6 +1,10 @@
 package com.megatron.megatronapi.controller;
 
+import com.megatron.megatronapi.service.CoinGeckoApiClient;
+import com.megatron.megatronapi.service.imp.CoinGeckoApiClientImpl;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Connection;
@@ -50,6 +54,13 @@ public class MegatronController implements MegatronControllerInterface{
         htmlBuilder.append("</html>");
 
         return htmlBuilder.toString();
+    }
+
+    @Override
+    public String pingCoinGecko() {
+        CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
+        System.out.println(client.ping());
+        return "ok";
     }
 
 }

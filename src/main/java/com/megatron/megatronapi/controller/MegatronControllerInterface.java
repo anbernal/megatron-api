@@ -20,4 +20,7 @@ public interface MegatronControllerInterface {
     @GetMapping("/tela-lista")
     public String generateBasicHtml();
 
+    @GetMapping("/ping-coingecko")
+    public String pingCoinGecko();
+
 }
