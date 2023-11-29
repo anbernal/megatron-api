@@ -1,5 +1,6 @@
 package com.megatron.megatronapi.controller;
 
+import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
 import com.megatron.megatronapi.service.imp.CoinGeckoApiClientImpl;
 import org.springframework.stereotype.Component;
@@ -57,10 +58,9 @@ public class MegatronController implements MegatronControllerInterface{
     }
 
     @Override
-    public String pingCoinGecko() {
+    public Ping pingCoinGecko() {
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
-        System.out.println(client.ping());
-        return "ok";
+        return client.ping();
     }
 
 }

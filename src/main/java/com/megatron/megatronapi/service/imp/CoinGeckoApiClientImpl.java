@@ -30,6 +30,6 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
 
     @Override
     public Ping ping() {
-        return null;
+        return coinGeckoApi.executeSync(coinGeckoApiService.ping());
     }
 }

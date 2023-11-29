@@ -1,5 +1,6 @@
 package com.megatron.megatronapi.controller;
 
+import com.megatron.megatronapi.model.Ping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,6 @@ public interface MegatronControllerInterface {
     public String generateBasicHtml();
 
     @GetMapping("/ping-coingecko")
-    public String pingCoinGecko();
+    public Ping pingCoinGecko();
 
 }
