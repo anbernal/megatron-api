@@ -1,5 +1,6 @@
 package com.megatron.megatronapi.controller;
 
+import com.megatron.megatronapi.domain.Coin.CoinList;
 import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
 import com.megatron.megatronapi.service.imp.CoinGeckoApiClientImpl;
@@ -61,6 +62,12 @@ public class MegatronController implements MegatronControllerInterface{
     public Ping pingCoinGecko() {
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
         return client.ping();
+    }
+
+    @Override
+    public List<CoinList> listaCoinGecko() {
+        CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
+        return client.getCoinList();
     }
 
 }

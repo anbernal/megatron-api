@@ -24,4 +24,7 @@ public interface MegatronControllerInterface {
     @GetMapping("/ping-coingecko")
     public Ping pingCoinGecko();
 
+    @GetMapping("/lista-coingecko")
+    public List listaCoinGecko();
+
 }
