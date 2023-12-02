@@ -1,7 +1,7 @@
 package com.megatron.megatronapi.model;
 
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 public class Moeda {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 

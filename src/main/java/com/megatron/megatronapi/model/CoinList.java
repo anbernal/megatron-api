@@ -1,4 +1,4 @@
-package com.megatron.megatronapi.domain.Coin;
+package com.megatron.megatronapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;

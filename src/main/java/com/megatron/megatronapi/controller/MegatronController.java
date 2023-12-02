@@ -1,6 +1,6 @@
 package com.megatron.megatronapi.controller;
 
-import com.megatron.megatronapi.domain.Coin.CoinList;
+import com.megatron.megatronapi.model.CoinList;
 import com.megatron.megatronapi.model.Moeda;
 import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
@@ -8,16 +8,9 @@ import com.megatron.megatronapi.service.MoedaService;
 import com.megatron.megatronapi.service.imp.CoinGeckoApiClientImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import static jakarta.servlet.SessionTrackingMode.URL;
 
 @Component
 public class MegatronController implements MegatronControllerInterface{

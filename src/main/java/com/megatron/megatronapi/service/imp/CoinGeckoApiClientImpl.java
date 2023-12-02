@@ -1,6 +1,6 @@
 package com.megatron.megatronapi.service.imp;
 
-import com.megatron.megatronapi.domain.Coin.CoinList;
+import com.megatron.megatronapi.model.CoinList;
 import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApi;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
