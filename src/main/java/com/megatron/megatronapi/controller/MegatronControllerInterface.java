@@ -1,5 +1,7 @@
 package com.megatron.megatronapi.controller;
 
+import com.megatron.megatronapi.domain.Coin.CoinList;
+import com.megatron.megatronapi.model.Moeda;
 import com.megatron.megatronapi.model.Ping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,9 @@ public interface MegatronControllerInterface {
     public Ping pingCoinGecko();
 
     @GetMapping("/lista-coingecko")
-    public List listaCoinGecko();
+    public List<CoinList> listaCoinGecko();
+
+    @GetMapping("/lista-moeda-cadastradas")
+    public List<Moeda>  ListaMoedaCadastradas();
 
 }

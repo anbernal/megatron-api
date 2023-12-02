@@ -1,9 +1,12 @@
 package com.megatron.megatronapi.controller;
 
 import com.megatron.megatronapi.domain.Coin.CoinList;
+import com.megatron.megatronapi.model.Moeda;
 import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
+import com.megatron.megatronapi.service.MoedaService;
 import com.megatron.megatronapi.service.imp.CoinGeckoApiClientImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -23,6 +26,9 @@ public class MegatronController implements MegatronControllerInterface{
     {
         return "Testando API megatron.";
     }
+
+    @Autowired
+    private MoedaService moedaService;
 
     @Override
     public List<String> atualizarMoeda(){
@@ -68,6 +74,11 @@ public class MegatronController implements MegatronControllerInterface{
     public List<CoinList> listaCoinGecko() {
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
         return client.getCoinList();
+    }
+
+    @Override
+    public List<Moeda>  ListaMoedaCadastradas() {
+        return this.moedaService.listaMoedas();
     }
 
 }
