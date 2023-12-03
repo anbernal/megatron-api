@@ -1,6 +1,7 @@
 package com.megatron.megatronapi.controller;
 
 import com.megatron.megatronapi.model.CoinList;
+import com.megatron.megatronapi.model.Compras;
 import com.megatron.megatronapi.model.Moeda;
 import com.megatron.megatronapi.model.Ping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,5 +31,9 @@ public interface MegatronControllerInterface {
 
     @GetMapping("/lista-moeda-cadastradas")
     public List<Moeda>  ListaMoedaCadastradas();
+
+    @GetMapping("/lista-compras-cadastradas")
+    public List<Compras>  ListaComprasCadastradas();
+
 
 }
