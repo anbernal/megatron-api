@@ -19,19 +19,17 @@ public class Compras {
     private int id;
 
     @Column(name = "data_compra")
-    @ColumnTransformer(
-            read = "datetime(data_compra, 'DD-MM-YYYY HH24:MI:SS')",
-            write = "strftime('%d-%m-%Y %H:%M:%S', ?)"
-    )
-    private LocalDateTime dataCompra;
+    private String dataCompra;
+
     @Column(name = "quantidade") // real
-    private float qtd;
+    private double qtd;
 
     @Column(name = "valor_compra") // integer
-    private int valorCompra;
+    private Integer valorCompra;
 
-    @Column(name = "id_moeda") // integer
-    private int idMoeda;
+    @ManyToOne
+    @JoinColumn(name = "id_moeda") // integer
+    private Moeda moeda;
 
     @Column(name = "status") // text
     private String status;
@@ -40,9 +38,5 @@ public class Compras {
     private Float valorVenda;
 
     @Column(name = "data_venda")
-    @ColumnTransformer(
-            read = "datetime(data_venda, 'DD-MM-YYYY HH24:MI:SS')",
-            write = "strftime('%d-%m-%Y %H:%M:%S', ?)"
-    )
-    private LocalDateTime dataVenda;
+    private String dataVenda;
 }

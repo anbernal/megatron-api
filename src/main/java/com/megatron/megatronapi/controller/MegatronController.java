@@ -1,9 +1,6 @@
 package com.megatron.megatronapi.controller;
 
-import com.megatron.megatronapi.model.CoinList;
-import com.megatron.megatronapi.model.Compras;
-import com.megatron.megatronapi.model.Moeda;
-import com.megatron.megatronapi.model.Ping;
+import com.megatron.megatronapi.model.*;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
 import com.megatron.megatronapi.service.ComprasService;
 import com.megatron.megatronapi.service.MoedaService;
@@ -82,6 +79,12 @@ public class MegatronController implements MegatronControllerInterface{
     @Override
     public List<Compras> ListaComprasCadastradas() {
         return this.comprasService.listaCompras();
+    }
+
+    @Override
+    public List<CoinFullData> buscaMoedaId(String id) {
+        CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
+        return client.getCoinById(id);
     }
 
 }

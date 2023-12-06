@@ -1,12 +1,11 @@
 package com.megatron.megatronapi.controller;
 
-import com.megatron.megatronapi.model.CoinList;
-import com.megatron.megatronapi.model.Compras;
-import com.megatron.megatronapi.model.Moeda;
-import com.megatron.megatronapi.model.Ping;
+import com.megatron.megatronapi.model.*;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import retrofit2.http.Path;
 
 import java.util.List;
 
@@ -35,5 +34,7 @@ public interface MegatronControllerInterface {
     @GetMapping("/lista-compras-cadastradas")
     public List<Compras>  ListaComprasCadastradas();
 
+    @GetMapping("/busca-moeda-id/{id}")
+    public List<CoinFullData> buscaMoedaId(@PathVariable String id);
 
 }

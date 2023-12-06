@@ -1,10 +1,13 @@
 package com.megatron.megatronapi.service.imp;
 
+import com.megatron.megatronapi.model.CoinFullData;
 import com.megatron.megatronapi.model.CoinList;
 import com.megatron.megatronapi.model.Ping;
 import com.megatron.megatronapi.service.CoinGeckoApi;
 import com.megatron.megatronapi.service.CoinGeckoApiClient;
 import com.megatron.megatronapi.service.CoinGeckoApiService;
+
+import java.util.Collections;
 import java.util.List;
 
 public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
@@ -38,5 +41,10 @@ public class CoinGeckoApiClientImpl implements CoinGeckoApiClient {
     @Override
     public List<CoinList> getCoinList() {
         return coinGeckoApi.executeSync(coinGeckoApiService.getCoinList());
+    }
+
+    @Override
+    public List<CoinFullData> getCoinById(String id) {
+        return Collections.singletonList(coinGeckoApi.executeSync(coinGeckoApiService.getCoinById(id, true, true, true, true, true, false)));
     }
 }
