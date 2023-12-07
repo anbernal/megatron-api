@@ -1,4 +1,4 @@
-package com.megatron.megatronapi.service;
+package com.megatron.megatronapi.service.imp;
 
 import com.megatron.megatronapi.error.CoinGeckoApiException;
 import com.megatron.megatronapi.model.CoinGeckoApiError;

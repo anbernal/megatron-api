@@ -13,10 +13,13 @@ import java.util.List;
 
 @Component
 public class MegatronController implements MegatronControllerInterface{
+
+
     @Override
     public String testeApi()
     {
-        return "Testando API megatron.";
+        this.moedaService.atualizaDadosCoinGecko();
+        return "Teste realizado";
     }
 
     @Autowired
@@ -82,9 +85,14 @@ public class MegatronController implements MegatronControllerInterface{
     }
 
     @Override
-    public List<CoinFullData> buscaMoedaId(String id) {
+    public CoinFullData buscaMoedaId(String id) {
         CoinGeckoApiClient client = new CoinGeckoApiClientImpl();
         return client.getCoinById(id);
+    }
+
+    @Override
+    public void atualizaMoeda() {
+        this.moedaService.atualizaDadosCoinGecko();
     }
 
 }

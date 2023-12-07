@@ -35,6 +35,9 @@ public interface MegatronControllerInterface {
     public List<Compras>  ListaComprasCadastradas();
 
     @GetMapping("/busca-moeda-id/{id}")
-    public List<CoinFullData> buscaMoedaId(@PathVariable String id);
+    public CoinFullData buscaMoedaId(@PathVariable String id);
+
+    @GetMapping("/atualizaMoeda")
+    public void atualizaMoeda();
 
 }

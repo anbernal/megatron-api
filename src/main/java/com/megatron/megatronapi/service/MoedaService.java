@@ -7,4 +7,5 @@ import java.util.List;
 public interface MoedaService {
 
     List<Moeda> listaMoedas();
+    void  atualizaDadosCoinGecko();
 }

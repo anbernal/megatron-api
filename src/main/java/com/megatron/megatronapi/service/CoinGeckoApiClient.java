@@ -9,6 +9,5 @@ public interface CoinGeckoApiClient {
     Ping ping();
 
     List<CoinList> getCoinList();
-
-    List<CoinFullData> getCoinById(String id);
+    CoinFullData getCoinById(String id);
 }
