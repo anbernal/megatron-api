@@ -75,12 +75,12 @@ public class MegatronController implements MegatronControllerInterface{
     }
 
     @Override
-    public List<Moeda> ListaMoedaCadastradas() {
+    public List<Moeda> listaMoedaCadastradas() {
         return this.moedaService.listaMoedas();
     }
 
     @Override
-    public List<Compras> ListaComprasCadastradas() {
+    public List<Compras> listaComprasCadastradas() {
         return this.comprasService.listaCompras();
     }
 

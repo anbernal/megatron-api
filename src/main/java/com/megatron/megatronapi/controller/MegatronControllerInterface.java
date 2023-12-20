@@ -29,10 +29,10 @@ public interface MegatronControllerInterface {
     public List<CoinList> listaCoinGecko();
 
     @GetMapping("/lista-moeda-cadastradas")
-    public List<Moeda>  ListaMoedaCadastradas();
+    public List<Moeda>  listaMoedaCadastradas();
 
     @GetMapping("/lista-compras-cadastradas")
-    public List<Compras>  ListaComprasCadastradas();
+    public List<Compras>  listaComprasCadastradas();
 
     @GetMapping("/busca-moeda-id/{id}")
     public CoinFullData buscaMoedaId(@PathVariable String id);
